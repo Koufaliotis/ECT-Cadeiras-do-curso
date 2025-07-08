@@ -1,0 +1,1 @@
+Concert [getDuracao()=25.0, getLocal()=Madrid, Espanha, getData()=2025-05-27T11:00getIdInc()=0] lucro25300.0Concert [getDuracao()=35.0, getLocal()=Oslo, Suecia, getData()=2025-05-28T05:00getIdInc()=1] lucro11500.0
