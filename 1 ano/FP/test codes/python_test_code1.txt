@@ -1,0 +1,46 @@
+from typing import clear_overloads
+
+
+largura = 32
+altura = 64
+area = altura * largura
+print(area)
+
+
+print("largura")
+largura = int(input ("insert valiu"))
+print(largura)
+print("altura")
+altura = int(input ("insert valiu"))
+print(altura)
+area = altura * largura
+print(area)
+
+print(""". 
+.
+.
+.
+""")
+testifcase = int(input("if test case numberof slide 3 of tp03:"))
+
+if testifcase == 1:
+  bool1 = 5
+  print(bool1)
+
+elif testifcase == 2:
+  bool1 = bool(1) 
+  print(bool1)
+elif testifcase == 3:
+  bool1 = bool(0)
+  print(bool1)
+elif testifcase ==4:
+  
+  print("the resolt sould be true /n")
+  bool2= bool(True)
+  bool1 =bool([bool2])
+  print(bool1)
+  
+  bool3 = 0
+  print("the resolt sould be false /n")
+  bool1 =bool([bool3])
+  print(bool1)
