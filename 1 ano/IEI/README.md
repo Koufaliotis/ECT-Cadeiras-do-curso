@@ -1,2 +1,2 @@
 Introduçao de Engenharia Informatica
-o projeto final foi feito em groupo
+\no projeto final foi feito em groupo
