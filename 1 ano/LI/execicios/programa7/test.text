@@ -1,0 +1,19 @@
+def get_factor(x, y, xref, yref,width, height):
+        distance = math.sqrt( pow(x-xref,2) + pow(y-yref,2))
+        distance_to_edge = math.sqrt( pow(width,2) + pow(height,2))
+        return int(255*(1-(distance/distance_to_edge)))
+    
+    def process_image(fileName):
+        im = Image.open(fileName).convert("RGB")
+        width, height = im.size
+        new_im = Image.new("RGB", (width, height))
+        #important structure
+        for x in range(width):
+            for y in range(height):
+                new_pixel = get_factor(x, y,xref=(width//2) ,yref=(height//2),width=width, height= height)
+                new_im.putpixel((x, y), (new_pixel,new_pixel,new_pixel))
+
+        new_im.save(fileName + "-4bits.jpg")
+
+# Example usage:
+    process_image(fileName)
