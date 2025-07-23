@@ -1,0 +1,5 @@
+<foo attrib1="x" attrib2="y">
+<bar attrib1="z1" />
+<bar attrib1="z2" />
+<bar attrib1="z3" />
+</foo>

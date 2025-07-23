@@ -1,0 +1,63 @@
+import cherrypy
+import psutil
+
+class Node():
+    @cherrypy.expose
+    def index(self):
+        cpu_percent = psutil.cpu_percent(interval=1)
+        return "Eu sou o indice do Node (Node.index),cpu: {}".format(cpu_percent)
+    @cherrypy.expose
+    def page(self):
+        return "Eu sou o metodo do node"
+    
+class HtmlFile():
+    @cherrypy.expose
+    def htmlfile(self):
+        with open("htmlfile.html",'r',encoding="utf-8") as myfile:
+            
+            return myfile.read()
+        
+        #NEED TO FIND A WAY TO CONNECT ALL HTML WITH PYTHON BY JONSON: no
+class Actions():
+    @cherrypy.expose
+    #def doLogin(self, username=None, password=None):
+     #   return "Verificar as credenciais do utilizador " + username
+
+     
+    def doLogin(self, username=None, password=None):
+        if username and password:
+            # Here you would typically check the user's credentials.
+            return f"Verificar as credenciais do utilizador {username}"
+        return "Nome de utilizador ou senha não fornecidos."
+    #http://127.0.0.1:8080/actions/doLogin?username=your_username&password=your_password
+
+    
+class Root():
+    def __init__(self): #this is how to assosiate difrent classes
+        self.node = Node() ##what is node?
+        self.html = HtmlFile()
+        self.actions = Actions()
+        
+    @cherrypy.expose
+    def index(self):
+        return "Eu sou o índice do Root (Root.index)"
+    @cherrypy.expose
+    def page(self):
+        return "Eu sou um método do Root (Root.page)"
+    
+    @cherrypy.expose
+    def form(self,):
+              
+        with open("html2.html",'r',encoding="utf-8") as myfile:
+
+          return myfile.read()
+
+ # # # # ## # # # OR
+
+        #cherrypy.response.headers["Content-Type"] = "text/html"
+        #return open("html3.html")
+    
+
+    
+if __name__ == "__main__":
+    cherrypy.quickstart(Root(), "/")
