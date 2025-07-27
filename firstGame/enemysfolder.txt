@@ -1,0 +1,4 @@
+goblin1,4,2,0,0,4|swing,poke,
+goblin2,4,2,0,0,4|swing,poke,
+goblin3,4,2,0,0,4|swing,poke,
+goblin4,4,2,0,0,4|swing,poke,

@@ -1,0 +1,4 @@
+knight,slice,:,holyslice,
+archer,arrow,:,magicArrow,
+mage,Staf,MagicMisile,:,Heal,FireBall,SouperMisile,lightning,
+swordsman,slice,:,FireDance,
