@@ -6,4 +6,5 @@ NONE
 
 WEBSITES:
 https://nei.web.ua.pt/
+
 https://www.w3schools.com/c/c_structs_pointers.php
