@@ -5,8 +5,7 @@ NONE
 
 
 WEBSITES:
-https:
 
-1) //nei.web.ua.pt/
+1) https://nei.web.ua.pt/
 
 2) https://www.w3schools.com/c/c_structs_pointers.php
