@@ -1,0 +1,47 @@
+	.data
+	.eqv print_string,4
+	.eqv print_char,11
+	.eqv size,3
+strArray: .word str1,str2,str3	#the array will use 4 bytes
+
+str1: 	.asciiz "test1"
+str2:	.asciiz "test2"
+str3:	.asciiz "test3"
+	.text
+	.globl main
+	
+main: 
+	
+	la $t1,strArray
+	li $t0,size
+	sll $t0,$t0,2
+	addu $t2,$t1,$t0
+	
+for:
+	beq $t1,$t2,endFor
+	
+	lw $a0,0($t1)
+	li $v0,print_string
+	syscall
+	
+	li $a0,0($t1)
+	li $v0, print_string
+	syscall
+	#++++++
+	
+	
+	sll $t2,$t0,2 # offset left by 2
+	addu $t2,$t1,$t2#  ????????????? chainging mem potion of t2
+	lw $a0,0($t2)#my pointer
+	li $v0,print_string
+	syscall
+	
+	li $a0,'\n'
+	li $v0,print_char	
+	syscall
+	
+	
+	addi $t0,$t0,1
+	j for 
+	####end
+endFor:
